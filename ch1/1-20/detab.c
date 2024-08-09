@@ -8,9 +8,9 @@ void replace_tabs(char input[]){
   int read, write;
   int len = strlen(input);
 
-  for (read = 0, write = 0; read < len; read++) {
+  for (read = 0, write = 0; read < len; read++) { // two pointers
     if (input[read] == '\t') {
-      int spaces = TAB_LENGTH - (write % TAB_LENGTH);
+      int spaces = TAB_LENGTH - (write % TAB_LENGTH); // loop through how many spaces need to be added
       for (int j = 0; j < spaces; j++) {
         input[write] = ' ';
         write++;
@@ -22,6 +22,7 @@ void replace_tabs(char input[]){
       write++;
     }
   }
+  // end the input
   input[write] = '\0';
 }
 
